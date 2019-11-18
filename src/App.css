@@ -357,3 +357,138 @@ aside {
   line-height: 25px;
   width: 25px;
 }
+
+.modal--container {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.modal--content {
+  height: 504px;
+  width: 714px;
+  background: white;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border: 1px solid red;
+}
+
+.modal-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 24px;
+  border-bottom: 3px solid #f56a29;
+  padding-bottom: 20px;
+}
+
+form input {
+  height: 44px;
+  width: 600px;
+  border: 1px solid #d9e0eb;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+form p {
+  font-weight: 700;
+}
+
+form button {
+  width: 100%;
+  height: 44px;
+  background: #4183d7;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 30px 0;
+}
+
+.modal--bottom p {
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.modal--bottom button {
+  width: 100%;
+  height: 44px;
+  background: white;
+  border: 1px solid #4183d7;
+  border-radius: 5px;
+  color: #4183d7;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.modal {
+  background: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 20;
+}
+
+.modal--close {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.part {
+  display: flex;
+  margin-bottom: 68px;
+}
+
+.text h4 {
+  margin-top: 0;
+}
+
+.text {
+  width: 500px;
+}
+
+.signup {
+  display: flex;
+  flex-direction: row;
+}
+
+.left--signup {
+  background-color: green;
+}
+
+.right--signup {
+  flex: 1;
+  background-color: red;
+}
+
+.right--signup h3 {
+  text-align: center;
+  border-bottom: 3px solid yellow;
+  padding-bottom: 20px;
+}
+.right--signup input {
+  height: 44px;
+  width: 455px;
+}
+
+.right--signup p {
+  font-weight: bold;
+}
+
+.mdp {
+  display: flex;
+  justify-content: space-around;
+}
+
+.mdp input {
+  width: 214px;
+}
+
+.form {
+  font-weight: 700;
+}
+
+.pseudoemail {
+  margin-left: 11px;
+}

@@ -13,6 +13,7 @@ import Offer from "./components/Offer";
 
 import Header from "./containers/Header";
 import Footer from "./containers/Footer";
+import SignUp from "./components/SignUp";
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
         </Route>
         <Route path="/Offer/:id">
           <Offer />
+        </Route>
+        <Route path="/SignUp">
+          <SignUp />
         </Route>
       </Switch>
       <Footer />

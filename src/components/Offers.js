@@ -146,12 +146,6 @@ const Offers = () => {
                 )}
               </span>
             )}
-
-            {/* {page === (tab.length - 1) * limit ? (
-              <RightPage />
-            ) : (
-              <RightPageBlue />
-            )} */}
           </div>
         </div>
       )}
