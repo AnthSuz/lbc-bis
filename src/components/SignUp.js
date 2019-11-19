@@ -1,5 +1,4 @@
 import React from "react";
-
 import Watch from "../svg/Watch";
 import Cloche from "../svg/Cloche";
 import Eye from "../svg/Eye";
@@ -84,5 +83,4 @@ const SignUp = () => {
     </div>
   );
 };
-
 export default SignUp;
