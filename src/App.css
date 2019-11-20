@@ -382,7 +382,7 @@ aside {
   padding-bottom: 20px;
 }
 
-form input {
+.form--modal input {
   height: 44px;
   width: 600px;
   border: 1px solid #d9e0eb;
@@ -390,11 +390,11 @@ form input {
   font-size: 20px;
 }
 
-form p {
+.form--modal p {
   font-weight: 700;
 }
 
-form button {
+.input--button {
   width: 100%;
   height: 44px;
   background: #4183d7;
@@ -445,44 +445,7 @@ form button {
 }
 
 .text {
-  width: 500px;
-}
-
-.signup {
-  display: flex;
-  flex-direction: row;
-}
-
-.left--signup {
-  background-color: green;
-}
-
-.right--signup {
-  flex: 1;
-  background-color: red;
-}
-
-.right--signup h3 {
-  text-align: center;
-  border-bottom: 3px solid yellow;
-  padding-bottom: 20px;
-}
-.right--signup input {
-  height: 44px;
-  width: 455px;
-}
-
-.right--signup p {
-  font-weight: bold;
-}
-
-.mdp {
-  display: flex;
-  justify-content: space-around;
-}
-
-.mdp input {
-  width: 214px;
+  width: 450px;
 }
 
 .form {
@@ -490,5 +453,109 @@ form button {
 }
 
 .pseudoemail {
-  margin-left: 11px;
+  margin-left: 15px;
+}
+
+.logo {
+  width: 70px;
+  justify-content: center;
+  display: flex;
+}
+
+.inside--signup {
+  display: flex;
+  width: 100%;
+  margin: 30px 0;
+}
+
+.left--signup {
+  padding: 0 20px 20px 20px;
+  width: 55%;
+}
+
+.right--signup {
+  padding: 0 20px 20px 20px;
+  width: 45%;
+}
+
+.right--signup h2 {
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 3px solid #f56a29;
+}
+
+.right--signup p {
+  font-weight: bold;
+}
+
+.pseudo-email input {
+  width: 100%;
+  height: 44px;
+  border-radius: 5px;
+  font-size: 20px;
+  outline: none;
+}
+
+.mdp {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mdp input {
+  height: 44px;
+  border-radius: 5px;
+  width: 198px;
+  font-size: 20px;
+  outline: none;
+}
+
+/* .checkbox {
+  width: 0;
+  height: 0;
+} */
+
+.left--signup h2 {
+  margin-bottom: 40px;
+}
+
+.watch {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.mini-title {
+  margin-top: 0;
+  font-weight: 700;
+}
+
+.txt--inside {
+  margin-left: 50px;
+}
+
+.logo--inside {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.button-created {
+  margin: 40px 0;
+}
+
+.button-created input {
+  width: 100%;
+  height: 44px;
+  background-color: #4183d7;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  border: none;
+  font-weight: bold;
+}
+
+.checkbox {
+  margin: 20px 0;
+}
+.error-log {
+  color: #f56a29;
 }

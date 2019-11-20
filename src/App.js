@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 import "./App.css";
-
+import Cookie from "js-cookie";
 import Offers from "./components/Offers";
 import Offer from "./components/Offer";
 
@@ -16,11 +16,13 @@ import Footer from "./containers/Footer";
 import SignUp from "./components/SignUp";
 
 function App() {
+  const token = Cookie.get("token");
+  const [user, setUser] = useState({ token: token });
   return (
     <Router>
-      <Header />
+      <Header setUser={setUser} user={user} />
       <Switch>
-        <Route exact="true" path="/">
+        <Route exact={true} path="/">
           <Redirect to="/Offers" />
         </Route>
         <Route path="/Offers">
@@ -30,7 +32,7 @@ function App() {
           <Offer />
         </Route>
         <Route path="/SignUp">
-          <SignUp />
+          <SignUp setUser={setUser} user={user} />
         </Route>
       </Switch>
       <Footer />
