@@ -21,9 +21,9 @@ const Modal = props => {
           </span>
           <div className="modal--content">
             <div className="modal--container">
-              <p className="modal-title">Connexion</p>
+              <p className="modal--title">Connexion</p>
               <form
-                className="form--modal"
+                className="modal--form"
                 onSubmit={async event => {
                   event.preventDefault();
 
@@ -74,7 +74,7 @@ const Modal = props => {
                     setPassword(event.target.value);
                   }}
                 />
-                <input type="submit" className="input--button" />
+                <input type="submit" className="modall--input--button" />
               </form>
             </div>
             <hr />

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+import format from "date-fns/format";
 import { useParams } from "react-router-dom";
 
 const Offer = () => {
@@ -15,13 +15,21 @@ const Offer = () => {
         "https://leboncoin-api.herokuapp.com/api/offer/" + id
       );
       setOffer(response.data);
+
       setIsLoading(false);
     } catch (error) {
       console.log("vous êtes nul");
     }
   };
+  console.log("offer here --> " + offer.created);
 
-  console.log(offer);
+  let date;
+  if (offer.created) {
+    date = format(new Date(offer.created), "dd/MM/yyyy à mm:ss");
+  } else {
+    date = offer.created;
+  }
+  console.log("date -->" + date);
 
   useEffect(() => {
     fetchData();
@@ -34,16 +42,16 @@ const Offer = () => {
       ) : (
         <section className="offer">
           <div className="container">
-            <div className="article">
-              <div className="back-image">
+            <div className="offer--article">
+              <div className="offer--back--image">
                 <img src={offer.pictures[0]} alt="product" />
               </div>
-              <div className="offer-infos  box-shadow">
+              <div className="offer--infos  box-shadow">
                 <div>
-                  <span className="offer-title">{offer.title}</span>
-                  <span className="offer-price">{offer.price} €</span>
+                  <span className="offer--title">{offer.title}</span>
+                  <span className="offer--price">{offer.price} €</span>
                 </div>
-                <span> {offer.created} </span>
+                <span> {date} </span>
               </div>
               <div>
                 <h3>Description</h3>
@@ -52,11 +60,11 @@ const Offer = () => {
               </div>
             </div>
             <aside className="box-shadow">
-              <div className="infos-user">
+              <div className="offer--infos--user">
                 <span>{offer.creator.account.username}</span>
                 <a href="#">17 annonces en ligne</a>
               </div>
-              <button className="pay">
+              <button className="offer--buy">
                 <svg
                   width="22"
                   height="20"

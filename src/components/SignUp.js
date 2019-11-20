@@ -11,6 +11,7 @@ const SignUp = props => {
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [cgv, setCGV] = useState(false);
   const [signUpError, setSignUpError] = useState({
     status: false,
     message: ""
@@ -52,15 +53,15 @@ const SignUp = props => {
 
   return (
     <div className="container">
-      <div className="inside--signup box-shadow">
-        <div className="left--signup ">
+      <div className="signup--inside box-shadow">
+        <div className="signup--left">
           <h2>Pour créer un compte ?</h2>
-          <div className="watch">
-            <div className="logo--inside">
+          <div className="signup--watch">
+            <div className="signup--logo--inside">
               <Watch />
             </div>
-            <div className="txt--inside">
-              <p className="mini-title">Gagnez du temps</p>
+            <div className="signup--txt--inside">
+              <p className="signup--mini--title">Gagnez du temps</p>
               <p>
                 Publiez vos annonces rapidement, avec vos informations
                 pré-remplies chaque fois que vous souhaitez déposer une nouvelle
@@ -69,12 +70,12 @@ const SignUp = props => {
             </div>
           </div>
 
-          <div className="watch">
-            <div className="logo--inside">
+          <div className="signup--watch">
+            <div className="signup--logo--inside">
               <Cloche />
             </div>
-            <div className="txt--inside">
-              <p className="mini-title">Soyez les premiers informés</p>
+            <div className="signup--txt--inside">
+              <p className="signup--mini--title">Soyez les premiers informés</p>
               <p>
                 Créez des alertes Immo ou Emploi et ne manquez jamais l’annonce
                 qui vous intéresse.
@@ -82,12 +83,12 @@ const SignUp = props => {
             </div>
           </div>
 
-          <div className="watch">
-            <div className="logo--inside">
+          <div className="signup--watch">
+            <div className="signup--logo--inside">
               <Eye />
             </div>
-            <div className="txt--inside">
-              <p className="mini-title">Visibilité</p>
+            <div className="signup--txt--inside">
+              <p className="signup--mini--title">Visibilité</p>
               <p>
                 Suivez les statistiques de vos annonces (nombre de fois où votre
                 annonce a été vue, nombre de contacts reçus).
@@ -97,7 +98,7 @@ const SignUp = props => {
         </div>
 
         {/* SEPARATEUR */}
-        <div className="right--signup ">
+        <div className="signup--right">
           <h2>Créez un compte</h2>
           <form
             onSubmit={event => {
@@ -123,6 +124,11 @@ const SignUp = props => {
                   status: true,
                   message: "Renseignez un email"
                 });
+              } else if (cgv === false) {
+                setSignUpError({
+                  status: true,
+                  message: "CGV non acceptée"
+                });
               } else {
                 fetchSignUp();
                 setSignUpError({
@@ -132,7 +138,7 @@ const SignUp = props => {
               }
             }}
           >
-            <div className="pseudo-email">
+            <div className="signup--pseudo--email">
               <p>Pseudo *</p>
               <input
                 type="text"
@@ -149,7 +155,7 @@ const SignUp = props => {
               />
             </div>
 
-            <div className="mdp">
+            <div className="signup--mdp">
               <div>
                 <p>Mot de passe *</p>
                 <input
@@ -171,19 +177,25 @@ const SignUp = props => {
             </div>
 
             <br />
-            <div className="checkbox">
-              <input type="checkbox" />
+            <div className="signup--checkbox">
+              <input
+                type="checkbox"
+                checked={cgv}
+                onChange={event => {
+                  setCGV(event.target.checked);
+                }}
+              />
 
               <span>
-                « J’accepte les Conditions Générales de Vente et  les Conditions
+                « J’accepte les Conditions Générales de Vente et les Conditions
                 Générales d’Utilisation »
               </span>
               {signUpError.status === true ? (
-                <p className="error-log">{signUpError.message}</p>
+                <p className="signup--error--log">{signUpError.message}</p>
               ) : null}
             </div>
             {/* {signUpError.message} */}
-            <div className="button-created">
+            <div className="signup--button-created">
               <input type="submit" value="Créer mon Compte Personnel" />
             </div>
           </form>

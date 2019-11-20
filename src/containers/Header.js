@@ -5,31 +5,33 @@ import Wen from "../svg/Wen";
 import Person from "../svg/Person";
 import Modal from "../components/Modal";
 import Cookie from "js-cookie";
-
+import { Link } from "react-router-dom";
 const Header = props => {
-  const [showModal, setShowModal] = useState(false);
-
   return (
     <header>
       <Modal
-        showModal={showModal}
-        setShowModal={setShowModal}
+        showModal={props.showModal}
+        setShowModal={props.setShowModal}
         setUser={props.setUser}
       />
-      <ul className="container  menu">
+      <ul className="container  header--menu">
         <li>
-          <ul className="menu--left">
+          <ul className="header--menu--left">
+            <Link to="/">
+              <li>
+                <img src={Logo} alt="logo" />
+              </li>
+            </Link>
+            <Link to="/publish">
+              <li>
+                <button className="header--publish--offer">
+                  <IconPlus />
+                  Deposer une annonce
+                </button>
+              </li>
+            </Link>
             <li>
-              <img src={Logo} alt="logo" />
-            </li>
-            <li>
-              <button className="publish--offer">
-                <IconPlus />
-                Deposer une annonce
-              </button>
-            </li>
-            <li>
-              <button className="search--button">
+              <button className="header--search--button">
                 <Wen />
                 Rechercher
               </button>
@@ -38,9 +40,8 @@ const Header = props => {
         </li>
         {props.user.token ? (
           <>
-            <Person />
-
             <li
+              className="header--person"
               onClick={() => {
                 // Log Out
 
@@ -51,17 +52,19 @@ const Header = props => {
                 Cookie.remove("token");
               }}
             >
+              <Person />
               Se déconnecter
             </li>
           </>
         ) : (
           <>
-            <Person />
             <li
+              className="header--person"
               onClick={() => {
-                setShowModal(true);
+                props.setShowModal(true);
               }}
             >
+              <Person />
               Se connecter
             </li>
           </>
