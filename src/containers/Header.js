@@ -1,3 +1,4 @@
+// -----  IMPORT DE REACT -----
 import React, { useState } from "react";
 import Logo from "../images/logo.svg";
 import IconPlus from "../svg/IconPlus";
